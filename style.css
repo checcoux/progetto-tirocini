@@ -65,6 +65,33 @@ body {
 
 /* STILE GENERALE */
 
+.bottone {
+    width: 150px;
+    height: 50px;
+    border: 0;
+    border-radius: 50px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+    background: var(--rosa);
+    box-shadow: 4px 4px 15px var(--rosa-chiaro);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--bg-color)!important;
+    padding: 20px 30px;
+    transition: .25s box-shadow;
+}
+
+.bottone:focus {
+    outline: none;
+}
+
+.bottone:hover {
+    transition: .25s box-shadow;
+    box-shadow: 5px 6px 15px var(--rosa-chiaro-hover);
+}
+
 button {
     width: 150px;
     height: 50px;
@@ -197,6 +224,14 @@ header {
     margin: 30px 20px 0 20px;
 }
 
+.titolo_inizia {
+    margin-bottom: 30px;
+}
+
+.titolo_inizia+.bottone:first-of-type {
+    margin-right: 30px;
+}
+
 
 /* FORM */
 
@@ -288,6 +323,7 @@ button[type="submit"] {
     --blu-chiaro: #959fff;
     --rosa: #ff6584;
     --rosa-chiaro: #ffabbc;
+    --rosa-chiaro-hover: #ff849d;
 }
 
 
