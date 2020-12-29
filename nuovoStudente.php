@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript">
       function caricaAziende(settore) {
-        server = "http://localhost/progetto/caricaAziende.php?settore="+settore;
+        server = "http://localhost/caricaAziende.php?settore="+settore;
         richiesta = new XMLHttpRequest();
         richiesta.onreadystatechange = () => {
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {

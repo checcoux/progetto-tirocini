@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript">
       function caricaProvince(regione) {
-        server = "http://localhost/progetto/caricaProvince.php?regione="+regione;
+        server = "http://localhost/caricaProvince.php?regione="+regione;
         richiesta = new XMLHttpRequest();
         richiesta.onreadystatechange = () => {
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
@@ -23,7 +23,7 @@
         richiesta.send(null);
       }
       function caricaComuni(provincia) {
-        server = "http://localhost/progetto/caricaComuni.php?provincia="+provincia;
+        server = "http://localhost/caricaComuni.php?provincia="+provincia;
         richiesta = new XMLHttpRequest();
         richiesta.onreadystatechange = () => {
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {

@@ -11,7 +11,8 @@
     dataInizio CHAR(100),
     dataFine CHAR(100),
     settore CHAR(100),
-    azienda CHAR(100)
+    azienda CHAR(100),
+    relazione TEXT(1000000)
   )");
   $query = mysqli_query($link, "CREATE TABLE aziende (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -218,7 +218,8 @@ label {
 }
 
 input,
-select {
+select,
+textarea {
     display: block;
     width: 30vw;
     padding: 12px;
@@ -230,15 +231,21 @@ select {
     background-color: transparent;
 }
 
-input {
+input,
+textarea {
     box-sizing: border-box;
     -ms-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
 
+textarea {
+    height: 30vh;
+}
+
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
     outline: none;
     border: 1px solid var(--blu);
     border-radius: 5px;
@@ -258,6 +265,13 @@ form>div>span {
 
 button[type="submit"] {
     cursor: pointer;
+}
+
+
+/* INSERISCI RELAZIONI */
+
+#inserisciRelazioni {
+    display: block;
 }
 
 

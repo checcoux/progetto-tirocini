@@ -16,10 +16,8 @@
         $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
         mysqli_select_db($link, "progetto_tirocinio");
         $nome = $_GET["nome"];
-        $regioneID = $_GET["regione"];
-        $regione = mysqli_fetch_array(mysqli_query($link, "SELECT codice FROM regioni WHERE id='$regioneID'"))["codice"];
-        $provinciaID = $_GET["provincia"];
-        $provincia = mysqli_fetch_array(mysqli_query($link, "SELECT sigla_automobilistica FROM province WHERE id='$provinciaID'"))["sigla_automobilistica"];
+        $regione = $_GET["regione"];
+        $provincia = $_GET["provincia"];
         $comune = $_GET["comune"];
         $indirizzo = $_GET["indirizzo"];
         $settore = $_GET["settore"];
