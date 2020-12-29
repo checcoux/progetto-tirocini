@@ -1,0 +1,243 @@
+html, body, a, div, span, h1, h2, h3, form, input, select, option, label, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Gotham';
+  font-weight: 300;
+  font-size: 16px;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+/* STILE GENERALE */
+button {
+  width: 150px;
+  height: 50px;
+  border: 0;
+  border-radius: 50px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  background: var(--rosa);
+  box-shadow: 4px 4px 15px var(--rosa-chiaro);
+}
+button a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--bg-color);
+}
+button:focus {
+  outline: none;
+}
+h2 {
+  font-weight: 700;
+  font-size: 35px;
+  letter-spacing: -1px;
+  color: var(--blu);
+  text-align: center;
+}
+.contenuto-centrato {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contenuto-centrato p {
+  margin-top: 20px;
+}
+.aggiorna-img {
+  position: absolute;
+  bottom: 10px;
+  left: 60px;
+  width: 30vw;
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  margin: 60px 60px 0 60px;
+  font-weight: 800;
+  font-size: 25px;
+  text-transform: uppercase;
+  line-height: 0.9em;
+  color: var(--blu);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#logo1 {
+  text-align: left;
+  font-weight: inherit;
+  font-size: inherit;
+}
+#logo2 {
+  text-align: right;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* HOMEPAGE */
+#home {
+  padding: 20vh 60px;
+  position: relative;
+}
+#home-title {
+  width: 40vw;
+  position: absolute;
+  top: 35%;
+}
+#home h1 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 7vw;
+  line-height: 0.9em;
+  letter-spacing: -3px;
+  color: var(--blu);
+}
+#home button {
+  background: var(--rosa);
+  margin-right: 10px;
+}
+#home button a[href="inizia.html"] {
+  color: var(--bg-color);
+}
+#home a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--font-color);
+}
+#home img {
+  width: 40vw;
+  position: absolute;
+  top: 20%;
+  right: 60px;
+}
+
+/* INIZIA  */
+#inizia button {
+  margin: 30px 20px 0 20px;
+}
+
+/* FORM */
+form {
+  margin: 60px auto;
+  width: 30vw;
+}
+label {
+  padding-bottom: 15px;
+  display: block;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--font-color);
+  text-align: left;
+}
+.campoRichiesto::after {
+  content: "*";
+  color: var(--rosa);
+}
+input, select {
+  display: block;
+  width: 30vw;
+  padding: 12px;
+  margin-bottom: 40px;
+  border: 1px solid var(--grigio-chiaro);
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--font-color);
+  background-color: transparent;
+}
+input {
+  box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+input:focus, select:focus {
+  outline: none;
+  border: 1px solid var(--blu);
+  border-radius: 5px;
+}
+form > div {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+form > div > span {
+  color: var(--grigio-scuro);
+  font-style: italic;
+
+}
+button[type="submit"] {
+  cursor: pointer;
+}
+
+/* LIGHT OR DARK MODE */
+:root {
+  --bg-color: #ffffff;
+  --grigio-chiaro: #ebebeb;
+  --grigio-scuro: #6b6b6b;
+  --font-color: #000000;
+  --blu: #4c3cff;
+  --blu-chiaro: #959fff;
+  --rosa: #ff6584;
+  --rosa-chiaro: #ffabbc;
+}
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000000;
+    --medium-color: #3e3e3e;
+    --font-color: #ffffff;
+    --blu: #4c3cff;
+    --blu-scuro: #2603c2;
+    --rosa: #ff6584;
+    --rosa-scuro: #e43f61;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #ffffff;
+    --medium-color: #ebebeb;
+    --font-color: #000000;
+    --blu: #4c3cff;
+    --blu-chiaro: #959fff;
+    --rosa: #ff6584;
+    --rosa-chiaro: #ffabbc;
+  }
+}*/
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/Gotham%20%Black.ttf') format('ttf');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/Gotham%20%Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/Gotham%20%Medium.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/Gotham%20%Book.ttf') format('ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/Gotham%20%Light.ttf') format('ttf');
+    font-weight: 200;
+    font-style: normal;
+}
