@@ -13,8 +13,8 @@
     <div class="contenuto-centrato">
       <h2>Inserimento dati completato</h2>
       <?php
-        $link = mysqli_connect("localhost", "root");
-        mysqli_select_db($link, "test");
+        $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
+        mysqli_select_db($link, "progetto_tirocinio");
         $nome = $_GET["nome"];
         $cognome = $_GET["cognome"];
         $matricola = $_GET["matricola"];

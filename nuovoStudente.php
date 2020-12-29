@@ -102,11 +102,7 @@
       <div>
         <span>I campi con * sono obbligatori</span>
         <button type="submit">Invia</button>
-      </div>
-      <form class="" action="index.html" method="post">
-        <label for="">Azienda 1</label>
-        <textarea></textarea>
-      </form>
+      </div>    
     </form>
   </body>
 </html>

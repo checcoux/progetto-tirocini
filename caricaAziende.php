@@ -1,7 +1,7 @@
 <?php
   $settore = $_GET["settore"];
-  $link = mysqli_connect("localhost", "root");
-  mysqli_select_db($link, "test");
+  $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
+  mysqli_select_db($link, "progetto_tirocinio");
   $query = mysqli_query($link, "SELECT * FROM aziende WHERE settore='$settore'");
   while ($azienda = mysqli_fetch_assoc($query)) {
     $id = $azienda["id"];

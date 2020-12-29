@@ -1,9 +1,9 @@
 <?php
-  $link = mysqli_connect("localhost", "root");
-  if (!mysqli_select_db($link, "test")) {
+  $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
+  if (!mysqli_select_db($link, "progetto_tirocinio")) {
     $query = mysqli_query($link, "CREATE DATABASE test");
   }
-  mysqli_select_db($link, "test");
+  mysqli_select_db($link, "progetto_tirocinio");
   $query = mysqli_query($link, "CREATE TABLE tirocini (
     matricola INT(6),
     nome CHAR(100),
