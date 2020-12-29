@@ -141,7 +141,7 @@ label {
   content: "*";
   color: var(--rosa);
 }
-input, select {
+input, select, textarea {
   display: block;
   width: 30vw;
   padding: 12px;
@@ -152,13 +152,16 @@ input, select {
   color: var(--font-color);
   background-color: transparent;
 }
-input {
+input, textarea {
   box-sizing: border-box;
     -ms-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-input:focus, select:focus {
+textarea {
+  height: 30vh;
+}
+input:focus, select:focus, textarea:focus {
   outline: none;
   border: 1px solid var(--blu);
   border-radius: 5px;
@@ -177,6 +180,13 @@ form > div > span {
 button[type="submit"] {
   cursor: pointer;
 }
+
+/* INSERISCI RELAZIONI */
+#inserisciRelazioni {
+  display: block;
+}
+
+
 
 /* LIGHT OR DARK MODE */
 :root {

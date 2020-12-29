@@ -23,7 +23,6 @@
         $azienda = $_GET["azienda"];
         $settore = $_GET["settore"];
         $query = mysqli_query($link, "INSERT INTO tirocini (nome, cognome, matricola, dataInizio, dataFine, azienda, settore) VALUES ('$nome', '$cognome', '$matricola', '$dataInizio', '$dataFine', '$azienda', '$settore')");
-        echo mysqli_error($link);
         mysqli_close($link);
         echo "<p>I tuoi dati sono stati inseriti correttamente nel database.</p>";
       ?>
