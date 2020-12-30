@@ -11,21 +11,20 @@
       <span id="logo2">Portale<br>dei tirocini<br>d'azienda</span>
     </header>
     <div class="contenuto-centrato">
-      <h2>Inserimento dati completato</h2>
+      <h2>Inserimento relazioni completato</h2>
       <?php
         $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
         mysqli_select_db($link, "progetto_tirocinio");
-        $nome = $_GET["nome"];
-        $cognome = $_GET["cognome"];
         $matricola = $_GET["matricola"];
-        $dataInizio = $_GET["dataInizio"];
-        $dataFine = $_GET["dataFine"];
-        $azienda = $_GET["azienda"];
-        $settore = $_GET["settore"];
-        $query = mysqli_query($link, "INSERT INTO tirocini (nome, cognome, matricola, dataInizio, dataFine, azienda, settore) VALUES ('$nome', '$cognome', '$matricola', '$dataInizio', '$dataFine', '$azienda', '$settore')");
-        $query = mysqli_query($link, "UPDATE aziende SET (tirociniAttivi += 1)");
+        $relazioni = $_GET["relazioni"];
+        $aziendeID = array_keys($_GET["relazioni"]);
+        for ($i=0; $i < count($relazioni); $i++) {
+          $aziendaID = $aziendeID["$i"];
+          $relazione = $relazioni["$aziendaID"];
+          $query = mysqli_query($link, "UPDATE tirocini SET relazione='$relazione' WHERE matricola='$matricola' AND azienda='$aziendaID'");
+        }
+        echo "<p>Le nuove relazioni sono state inserite correttamente nel database.</p>";
         mysqli_close($link);
-        echo "<p>I tuoi dati sono stati inseriti correttamente nel database.</p>";
       ?>
     </div>
     <img class="aggiorna-img" src="img/undraw_Forms_re_pkrt.svg">

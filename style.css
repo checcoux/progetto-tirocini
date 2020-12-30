@@ -104,15 +104,13 @@ button {
     box-shadow: 4px 4px 15px var(--rosa-chiaro);
 }
 
-button a {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 16px;
-    color: var(--bg-color);
-}
-
 button:focus {
     outline: none;
+}
+
+button:hover {
+  transition: .25s box-shadow;
+  box-shadow: 5px 6px 15px var(--rosa-chiaro-hover);
 }
 
 h2 {
@@ -194,15 +192,6 @@ header {
     color: var(--blu);
 }
 
-#home button {
-    background: var(--rosa);
-    margin-right: 10px;
-}
-
-#home button a[href="inizia.html"] {
-    color: var(--bg-color);
-}
-
 #home a {
     text-decoration: none;
     font-weight: 400;
@@ -220,15 +209,11 @@ header {
 
 /* INIZIA  */
 
-#inizia button {
-    margin: 30px 20px 0 20px;
-}
-
-.titolo_inizia {
+#inizia h2 {
     margin-bottom: 30px;
 }
 
-.titolo_inizia+.bottone:first-of-type {
+#inizia .bottone:first-of-type {
     margin-right: 30px;
 }
 

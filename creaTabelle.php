@@ -24,6 +24,7 @@
     settore CHAR(100),
     email CHAR(100),
     web CHAR(100),
+    telefono INT(40),
     tirociniAttivi INT(3),
     tirociniCompletati INT(3)
   )");

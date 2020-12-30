@@ -9,22 +9,35 @@
         server = "http://localhost/caricaAziendeStudente.php?matricola="+matricola;
         richiesta = new XMLHttpRequest();
         richiesta.onreadystatechange = () => {
+          var relazioni = document.getElementById("inserisciRelazioni");
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
-            risposta = JSON.parse(richiesta.response);
-            for (var i = 0; i < risposta.length; i++) {
-              var id = risposta[i]["id"];
-              var azienda = risposta[i]["azienda"];
-              var relazioni = document.getElementById("inserisciRelazioni");
-              if (relazioni.children[id] == null) {
-                var label = document.createElement("label");
-                var testo = document.createElement("textarea");
-                label.innerHTML = azienda;
-                label.setAttribute("for", id);
-                relazioni.appendChild(label);
-                testo.setAttribute("name", id);
-                relazioni.appendChild(testo);
+            if (richiesta.response !== "NULL") {
+              risposta = JSON.parse(richiesta.response);
+              for (var i = 0; i < risposta.length; i++) {
+                var id = risposta[i]["id"];
+                var azienda = risposta[i]["azienda"];
+                if (relazioni.children[id] == null) {
+                  var label = document.createElement("label");
+                  var testo = document.createElement("textarea");
+                  label.innerHTML = azienda;
+                  label.setAttribute("for", id);
+                  relazioni.appendChild(label);
+                  testo.setAttribute("name", "relazioni["+id+"]");
+                  relazioni.appendChild(testo);
+                }
               }
+              if (relazioni.children[relazioni.children.length -1].nodeName !== "BUTTON") {
+                invia = document.createElement("button");
+                invia.setAttribute("type", "submit");
+                invia.innerHTML = "invia";
+                relazioni.appendChild(invia);
+              }
+            } else {
+              invia = document.createElement("p");
+              invia.innerHTML = "Non ci sono relazioni da inserire";
+              relazioni.appendChild(invia);
             }
+
           }
         };
         richiesta.open("GET", server, true);
@@ -38,9 +51,9 @@
       <span id="logo2">Portale<br>dei tirocini<br>d'azienda</span>
     </header>
     <h2>Inserisci relazione di tirocino</h2>
-    <form class="" action="index.html" method="post">
-      <label for="matricola" class="campoRichiesto">Numero di matricola</label>
-        <input type="text" name="matricola" onblur="caricaAziendeStudente(this.value)" required>
+    <form action="aggiornaRelazioni.php" method="get">
+      <label for="matricola">Numero di matricola</label>
+        <input type="text" name="matricola" onblur="caricaAziendeStudente(this.value)">
       <div id="inserisciRelazioni">
       </div>
     </form>

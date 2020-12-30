@@ -1,14 +1,20 @@
 <?php
   $matricola = $_GET["matricola"];
-  $link = mysqli_connect("localhost", "root");
-  mysqli_select_db($link, "test");
+  $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
+  mysqli_select_db($link, "progetto_tirocinio");
   $query = mysqli_query($link, "SELECT * FROM tirocini WHERE matricola='$matricola'");
   while ($tirocinio = mysqli_fetch_assoc($query)) {
     if (empty($tirocinio["relazione"])) {
-      $id = $tirocinio["azienda"];
-      $azienda = mysqli_fetch_assoc(mysqli_query($link, "SELECT nome FROM aziende WHERE id='$id'"))["nome"];
-      $tirocini[] = array("id" => $id, "azienda" => $azienda);
+      $aziendaID = $tirocinio["azienda"];
+      $azienda = mysqli_fetch_assoc(mysqli_query($link, "SELECT nome FROM aziende WHERE id='$aziendaID'"))["nome"];
+      $tirocini[] = array("id" => $aziendaID, "azienda" => $azienda);
+    } else {
+      break;
     }
   }
-  echo json_encode($tirocini);
+  if (!empty($tirocini)) {
+    echo json_encode($tirocini);
+  } else {
+    echo "NULL";
+  }
 ?>

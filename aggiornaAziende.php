@@ -23,16 +23,17 @@
         $settore = $_GET["settore"];
         $email = $_GET["email"];
         $query = mysqli_query($link, "INSERT INTO aziende (nome, regione, provincia, comune, indirizzo, settore, email) VALUES ('$nome', '$regione', '$provincia', '$comune', '$indirizzo', '$settore', '$email')");
+        $aziendaID = mysqli_fetch_assoc(mysqli_query($link, "SELECT id FROM aziende WHERE nome='$nome'"))["id"];
         if (!empty($_GET["telefono"])) {
           $telefono = $_GET["telefono"];
-          $query = mysqli_query($link, "INSERT INTO aziende (telefono) VALUES ('$telefono')");
+          $query = mysqli_query($link, "UPDATE aziende SET telefono='$telefono' WHERE id='$aziendaID'");
         }
         if (empty($_GET["telefono"])==false) {
           $web = $_GET["web"];
-          $query = mysqli_query($link, "INSERT INTO aziende (web) VALUES ('$web')");
+          $query = mysqli_query($link, "UPDATE aziende SET web='$web' WHERE id='$aziendaID'");
         }
-        mysqli_close($link);
         echo "<p>I dati dell'azienda sono stati inseriti correttamente nel database.</p>";
+        mysqli_close($link);
       ?>
     </div>
     <img class="aggiorna-img" src="img/undraw_Business_decisions_re_84ag.svg">
