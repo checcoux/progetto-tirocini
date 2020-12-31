@@ -15,11 +15,11 @@
       <?php
         $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
         mysqli_select_db($link, "progetto_tirocinio");
-        $nome = $_GET["nome"];
+        $nome = mysqli_real_escape_string($link, $_GET["nome"]);
         $regione = $_GET["regione"];
         $provincia = $_GET["provincia"];
         $comune = $_GET["comune"];
-        $indirizzo = $_GET["indirizzo"];
+        $indirizzo = mysqli_real_escape_string($_GET["indirizzo"]);
         $settore = $_GET["settore"];
         $email = $_GET["email"];
         $query = mysqli_query($link, "INSERT INTO aziende (nome, regione, provincia, comune, indirizzo, settore, email) VALUES ('$nome', '$regione', '$provincia', '$comune', '$indirizzo', '$settore', '$email')");
