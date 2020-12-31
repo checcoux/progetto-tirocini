@@ -55,11 +55,9 @@
             $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
             mysqli_select_db($link, "progetto_tirocinio");
             $query = mysqli_query($link, "SELECT * FROM regioni");
-            print_r($query);
             while ($regione = mysqli_fetch_assoc($query)) {
               echo '<option value="'.$regione["id"].'">'.$regione["nome"].'</option>';
             }
-            print_r(mysqli_error($link));
             mysqli_close($link);
           ?>
         </select>
