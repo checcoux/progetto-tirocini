@@ -11,7 +11,7 @@
         richiesta.onreadystatechange = () => {
           var relazioni = document.getElementById("inserisciRelazioni");
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
-            if (richiesta.response !== "NULL") {
+            if (richiesta.response !== "null") {
               risposta = JSON.parse(richiesta.response);
               for (var i = 0; i < risposta.length; i++) {
                 var id = risposta[i]["id"];
@@ -26,18 +26,19 @@
                   relazioni.appendChild(testo);
                 }
               }
-              if (relazioni.children[relazioni.children.length -1].nodeName !== "BUTTON") {
+              if (relazioni.lastElementChild.nodeName !== "BUTTON") {
                 invia = document.createElement("button");
                 invia.setAttribute("type", "submit");
                 invia.innerHTML = "invia";
                 relazioni.appendChild(invia);
               }
             } else {
-              invia = document.createElement("p");
-              invia.innerHTML = "Non ci sono relazioni da inserire";
-              relazioni.appendChild(invia);
+              if (relazioni.lastElementChild == null) {
+                messaggio = document.createElement("p");
+                messaggio.innerHTML = "Non ci sono relazioni da inserire.";
+                relazioni.appendChild(messaggio);
+              }
             }
-
           }
         };
         richiesta.open("GET", server, true);

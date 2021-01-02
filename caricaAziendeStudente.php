@@ -15,6 +15,6 @@
   if (!empty($tirocini)) {
     echo json_encode($tirocini);
   } else {
-    echo "NULL";
+    echo json_encode(null);
   }
 ?>
