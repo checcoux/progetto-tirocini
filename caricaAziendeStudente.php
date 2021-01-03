@@ -1,6 +1,6 @@
 <?php
   $matricola = $_GET["matricola"];
-  $link = mysqli_connect("localhost", "root");
+  $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
   mysqli_select_db($link, "test");
   $query = mysqli_query($link, "SELECT * FROM tirocini WHERE matricola='$matricola'");
   while ($tirocinio = mysqli_fetch_assoc($query)) {
