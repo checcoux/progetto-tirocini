@@ -8,7 +8,7 @@
   <body>
   <header>
       <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
-      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>
 	    <div class="gooey-rec"></div>
     </header>
     <div class="contenuto-centrato">
@@ -24,11 +24,15 @@
         $azienda = $_GET["azienda"];
         $settore = $_GET["settore"];
         $query = mysqli_query($link, "INSERT INTO tirocini (nome, cognome, matricola, dataInizio, dataFine, azienda, settore) VALUES ('$nome', '$cognome', '$matricola', '$dataInizio', '$dataFine', '$azienda', '$settore')");
-        $query = mysqli_query($link, "UPDATE aziende SET (tirociniAttivi += 1)");
+        if ($dataFine < date("Y-m-d")) {
+          $query = mysqli_query($link, "UPDATE aziende SET tirociniCompletati=tirociniCompletati+1 WHERE id='$azienda'");
+        } else {
+          $query = mysqli_query($link, "UPDATE aziende SET tirociniAttivi=tirociniAttivi+1 WHERE id='$azienda'");
+        }
         mysqli_close($link);
         echo "<p>I tuoi dati sono stati inseriti correttamente nel database.</p>";
       ?>
     </div>
-    <img class="aggiorna-img" src="img/undraw_Forms_re_pkrt.svg">
+    
   </body>
 </html>

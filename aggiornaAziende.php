@@ -8,7 +8,7 @@
   <body>
   <header>
       <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
-      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>
 	    <div class="gooey-rec"></div>
     </header>
     <div class="contenuto-centrato">
@@ -20,7 +20,7 @@
         $regione = $_GET["regione"];
         $provincia = $_GET["provincia"];
         $comune = $_GET["comune"];
-        $indirizzo = mysqli_real_escape_string($_GET["indirizzo"]);
+        $indirizzo = mysqli_real_escape_string($link, $_GET["indirizzo"]);
         $settore = $_GET["settore"];
         $email = $_GET["email"];
         $query = mysqli_query($link, "INSERT INTO aziende (nome, regione, provincia, comune, indirizzo, settore, email) VALUES ('$nome', '$regione', '$provincia', '$comune', '$indirizzo', '$settore', '$email')");
@@ -29,7 +29,7 @@
           $telefono = $_GET["telefono"];
           $query = mysqli_query($link, "UPDATE aziende SET telefono='$telefono' WHERE id='$aziendaID'");
         }
-        if (empty($_GET["telefono"])==false) {
+        if (empty($_GET["web"])==false) {
           $web = $_GET["web"];
           $query = mysqli_query($link, "UPDATE aziende SET web='$web' WHERE id='$aziendaID'");
         }
@@ -37,6 +37,6 @@
         mysqli_close($link);
       ?>
     </div>
-    <img class="aggiorna-img" src="img/undraw_Business_decisions_re_84ag.svg">
+    <img class="immagini-basso" src="img/undraw_Business_decisions_re_84ag.svg">
   </body>
 </html>

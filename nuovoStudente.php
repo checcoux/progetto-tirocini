@@ -27,7 +27,7 @@
   <body>
   <header>
       <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
-      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>
 	    <div class="gooey-rec"></div>
     </header>
     <h2>Inserisci i tuoi dati</h2>
@@ -103,7 +103,11 @@
       <div>
         <span>I campi con * sono obbligatori</span>
         <button type="submit">Invia</button>
-      </div>    
+      </div>
     </form>
+    <div class="immagini-basso-scroll">
+      <img src="img/undraw_Forms_re_pkrt.svg">
+    </div>
+
   </body>
 </html>

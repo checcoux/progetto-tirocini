@@ -43,7 +43,7 @@
   <body>
   <header>
       <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
-      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>
 	    <div class="gooey-rec"></div>
     </header>
     <h2>Inserisci i dati</h2>
@@ -126,7 +126,7 @@
           <option value="veterinaria">Zootecnico</option>
         </select>
       <label for="email" class="campoRichiesto">Email</label>
-        <input type="email" name="email" placeholder="mariorossi@agenzia.it" required>
+        <input type="email" name="email" placeholder="segreteria@azienda.it" required>
       <label for="telefono">Numero di telefono</label>
         <input type="tel" name="telefono">
       <label for="web">Sito web</label>
@@ -136,5 +136,8 @@
         <button type="submit">Invia</button>
       </div>
     </form>
+    <div class="immagini-basso-scroll">
+      <img src="img/undraw_Business_decisions_re_84ag.svg">
+    </div>
   </body>
 </html>

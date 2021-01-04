@@ -8,7 +8,7 @@
   <body>
   <header>
       <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
-      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>
 	    <div class="gooey-rec"></div>
     </header>
     <div class="contenuto-centrato">
@@ -28,6 +28,6 @@
         mysqli_close($link);
       ?>
     </div>
-    <img class="aggiorna-img" src="img/undraw_Forms_re_pkrt.svg">
+    <img class="immagini-basso" src="img/undraw_Forms_re_pkrt.svg">
   </body>
 </html>
