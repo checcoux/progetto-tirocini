@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript">
       function caricaProvince(regione) {
-        server = "http://localhost/caricaProvince.php?regione="+regione;
+        server = "/caricaProvince.php?regione="+regione;
         richiesta = new XMLHttpRequest();
         richiesta.onreadystatechange = () => {
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
@@ -23,7 +23,7 @@
         richiesta.send(null);
       }
       function caricaComuni(provincia) {
-        server = "http://localhost/caricaComuni.php?provincia="+provincia;
+        server = "/caricaComuni.php?provincia="+provincia;
         richiesta = new XMLHttpRequest();
         richiesta.onreadystatechange = () => {
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
@@ -41,9 +41,10 @@
     </script>
   </head>
   <body>
-    <header>
-      <span id="logo1">Università<br>degli studi<br>di Udine</span>
-      <span id="logo2">Portale<br>dei tirocini<br>d'azienda</span>
+  <header>
+      <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+	    <div class="gooey-rec"></div>
     </header>
     <h2>Inserisci i dati</h2>
     <form action="aggiornaAziende.php" method="get">
@@ -52,8 +53,8 @@
       <label for="regione" class="campoRichiesto">Regione</label>
         <select name="regione" onchange="caricaProvince(this.value)">
           <?php
-            $link = mysqli_connect("localhost", "root");
-            mysqli_select_db($link, "test");
+            $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
+            mysqli_select_db($link, "progetto_tirocinio");
             $query = mysqli_query($link, "SELECT * FROM regioni");
             while ($regione = mysqli_fetch_assoc($query)) {
               echo '<option value="'.$regione["id"].'">'.$regione["nome"].'</option>';

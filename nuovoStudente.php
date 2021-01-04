@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript">
       function caricaAziende(settore) {
-        server = "http://localhost/caricaAziende.php?settore="+settore;
+        server = "/caricaAziende.php?settore="+settore;
         richiesta = new XMLHttpRequest();
         richiesta.onreadystatechange = () => {
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
@@ -25,9 +25,10 @@
     </script>
   </head>
   <body>
-    <header>
-      <span id="logo1">Università<br>degli studi<br>di Udine</span>
-      <span id="logo2">Portale<br>dei tirocini<br>d'azienda</span>
+  <header>
+      <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+	    <div class="gooey-rec"></div>
     </header>
     <h2>Inserisci i tuoi dati</h2>
     <form action="aggiornaStudenti.php" method="get">

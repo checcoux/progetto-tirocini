@@ -6,33 +6,35 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
   <body>
-    <header>
-      <span id="logo1">Università<br>degli studi<br>di Udine</span>
-      <span id="logo2">Portale<br>dei tirocini<br>d'azienda</span>
+  <header>
+      <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+	    <div class="gooey-rec"></div>
     </header>
     <div class="contenuto-centrato">
       <h2>Inserimento dati completato</h2>
       <?php
         $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
         mysqli_select_db($link, "progetto_tirocinio");
-        $nome = $_GET["nome"];
+        $nome = mysqli_real_escape_string($link, $_GET["nome"]);
         $regione = $_GET["regione"];
         $provincia = $_GET["provincia"];
         $comune = $_GET["comune"];
-        $indirizzo = $_GET["indirizzo"];
+        $indirizzo = mysqli_real_escape_string($_GET["indirizzo"]);
         $settore = $_GET["settore"];
         $email = $_GET["email"];
         $query = mysqli_query($link, "INSERT INTO aziende (nome, regione, provincia, comune, indirizzo, settore, email) VALUES ('$nome', '$regione', '$provincia', '$comune', '$indirizzo', '$settore', '$email')");
+        $aziendaID = mysqli_fetch_assoc(mysqli_query($link, "SELECT id FROM aziende WHERE nome='$nome'"))["id"];
         if (!empty($_GET["telefono"])) {
           $telefono = $_GET["telefono"];
-          $query = mysqli_query($link, "INSERT INTO aziende (telefono) VALUES ('$telefono')");
+          $query = mysqli_query($link, "UPDATE aziende SET telefono='$telefono' WHERE id='$aziendaID'");
         }
         if (empty($_GET["telefono"])==false) {
           $web = $_GET["web"];
-          $query = mysqli_query($link, "INSERT INTO aziende (web) VALUES ('$web')");
+          $query = mysqli_query($link, "UPDATE aziende SET web='$web' WHERE id='$aziendaID'");
         }
-        mysqli_close($link);
         echo "<p>I dati dell'azienda sono stati inseriti correttamente nel database.</p>";
+        mysqli_close($link);
       ?>
     </div>
     <img class="aggiorna-img" src="img/undraw_Business_decisions_re_84ag.svg">
