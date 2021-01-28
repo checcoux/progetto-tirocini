@@ -105,9 +105,7 @@
         <button type="submit">Invia</button>
       </div>
     </form>
-    <div class="immagini-basso-scroll">
-      <img src="img/undraw_Forms_re_pkrt.svg">
-    </div>
+    
 
   </body>
 </html>

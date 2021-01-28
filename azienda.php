@@ -36,6 +36,7 @@
           <h2>Questa azienda non esiste</h2>
         </div>';}
     ?>
+    <!-- INSERIRE BREVE DESCRIZIONE AZIENDA -->
 
   </body>
 </html>

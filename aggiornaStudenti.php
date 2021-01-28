@@ -32,7 +32,8 @@
         mysqli_close($link);
         echo "<p>I tuoi dati sono stati inseriti correttamente nel database.</p>";
       ?>
+      <!-- AGGIUNGERE BOTTONE PER TORNARE ALLA HOME -->
     </div>
-    
+
   </body>
 </html>

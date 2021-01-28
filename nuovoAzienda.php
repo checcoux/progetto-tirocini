@@ -135,9 +135,7 @@
         <span>I campi con * sono obbligatori</span>
         <button type="submit">Invia</button>
       </div>
+      <!-- INSERIRE BREVE DESCRIZIONE AZIENDA -->
     </form>
-    <div class="immagini-basso-scroll">
-      <img src="img/undraw_Business_decisions_re_84ag.svg">
-    </div>
   </body>
 </html>

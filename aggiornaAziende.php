@@ -37,6 +37,5 @@
         mysqli_close($link);
       ?>
     </div>
-    <img class="immagini-basso" src="img/undraw_Business_decisions_re_84ag.svg">
   </body>
 </html>

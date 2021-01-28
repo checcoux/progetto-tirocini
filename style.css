@@ -48,7 +48,8 @@ input,
 select,
 option,
 label,
-button {
+button,
+textarea {
     margin: 0;
     padding: 0;
     border: 0;

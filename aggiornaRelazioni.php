@@ -28,6 +28,6 @@
         mysqli_close($link);
       ?>
     </div>
-    <img class="immagini-basso" src="img/undraw_Forms_re_pkrt.svg">
+    <!-- AGGIUNGERE BOTTONE PER TORNARE ALLA HOME -->
   </body>
 </html>
