@@ -38,9 +38,9 @@
         <input type="text" name="cognome" required>
       <label for="matricola" class="campoRichiesto">Numero di matricola</label>
         <input type="text" name="matricola" required>
-      <label for="dataInizio" class="campoRichiesto">Data di inizio</label>
+      <label for="dataInizio" class="campoRichiesto">Data di inizio tirocinio</label>
         <input type="date" name="dataInizio" required>
-      <label for="dataFine" class="campoRichiesto">Data di fine</label>
+      <label for="dataFine" class="campoRichiesto">Data di fine tirocinio</label>
         <input type="date" name="dataFine" required>
       <label for="settore" class="campoRichiesto">Settore</label>
         <select name="settore" onchange="caricaAziende(this.value)">

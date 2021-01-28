@@ -22,7 +22,7 @@
         for ($i=0; $i < count($relazioni); $i++) {
           $aziendaID = $aziendeID["$i"];
           $relazione = $relazioni["$aziendaID"];
-          $query = mysqli_query($link, "UPDATE tirocini SET relazione='$relazione' WHERE matricola='$matricola' AND azienda='$aziendaID'");
+          $query = mysqli_query($link, "UPDATE tirocini SET relazione='$relazione', stato='1' WHERE matricola='$matricola' AND azienda='$aziendaID'");
         }
         echo "<p>Le nuove relazioni sono state inserite correttamente nel database.</p>";
         mysqli_close($link);

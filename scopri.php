@@ -17,7 +17,7 @@
     <?php
       $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
       mysqli_select_db($link, "progetto_tirocinio");
-      $query = mysqli_query($link, "SELECT * FROM aziende WHERE tirociniAttivi > 0 OR tirociniCompletati > 0");
+      $query = mysqli_query($link, "SELECT * FROM aziende");
       while ($azienda = mysqli_fetch_assoc($query)) {
         echo "<a href=\"/azienda.php?id=".$azienda['id']."\">
               <div class=\"row_azienda\">

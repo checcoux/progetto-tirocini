@@ -46,10 +46,12 @@
       <span id="logo2">Università<br>degli studi<br>di Udine</span>
 	    <div class="gooey-rec"></div>
     </header>
-    <h2>Inserisci i dati</h2>
+    <h2>Nuova azienda</h2>
     <form action="aggiornaAziende.php" method="get">
       <label for="nome" class="campoRichiesto">Nome</label>
-        <input type="text" name="nome" required>
+        <input type="text" name="nome" required placeholder="es. Green Studio">
+        <label for="nome" class="campoRichiesto">Descrizione</label>
+        <input type="text" name="descrizione" required placeholder="es. chi siete e cosa fate">
       <label for="regione" class="campoRichiesto">Regione</label>
         <select name="regione" onchange="caricaProvince(this.value)">
           <?php
@@ -69,7 +71,7 @@
         <select name="comune" id="comuni" required>
         </select>
       <label for="indirizzo" class="campoRichiesto">Indirizzo</label>
-        <input type="text" name="indirizzo" required>
+        <input type="text" name="indirizzo" required placeholder="es. via Udine 69">
       <label for="settore" class="campoRichiesto">Settore</label>
         <select name="settore" required>
           <option value="agricoltura">Agricoltura</option>
@@ -126,11 +128,11 @@
           <option value="veterinaria">Zootecnico</option>
         </select>
       <label for="email" class="campoRichiesto">Email</label>
-        <input type="email" name="email" placeholder="segreteria@azienda.it" required>
+        <input type="email" name="email" placeholder="es. segreteria@azienda.it" required>
       <label for="telefono">Numero di telefono</label>
-        <input type="tel" name="telefono">
+        <input type="tel" name="telefono" placeholder="es. 123 4567822">
       <label for="web">Sito web</label>
-        <input type="text" name="web" placeholder="www.agenzia.it">
+        <input type="text" name="web" placeholder="es. www.agenzia.it">
       <div>
         <span>I campi con * sono obbligatori</span>
         <button type="submit">Invia</button>

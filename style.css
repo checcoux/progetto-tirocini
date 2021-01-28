@@ -120,17 +120,29 @@ h2 {
     text-align: center;
 }
 
+.link {
+    color: var(--blu);
+}
+
+.descrizioneaz {
+    font-size: 20px!important;
+    max-width: 350px;
+    margin-top: 15px;
+}
+
 .contenuto-centrato {
     text-align: center;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
 }
 
 .contenuto-centrato p {
     margin-top: 20px;
 }
+
 .immagini-basso {
     position: absolute;
     bottom: 0px;
@@ -138,17 +150,19 @@ h2 {
     z-index: -1;
     width: 40vw;
 }
+
 .immagini-basso-scroll {
     position: relative;
     bottom: 0px;
     right: 0px;
     z-index: -1;
 }
+
 .immagini-basso-scroll img {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  width: 40vw;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 40vw;
 }
 
 
@@ -233,6 +247,7 @@ header {
     right: 60px;
     z-index: -1;
 }
+
 #home img:nth-of-type(2) {
     width: 35vw;
     position: absolute;
@@ -416,6 +431,38 @@ a:visited {
 
 .row_azienda.alt:hover {
     box-shadow: none;
+}
+
+.row_azienda.alt2 {
+    width: 50vw;
+    cursor: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 0;
+}
+
+.row_azienda.alt2 h2 {
+    display: inline;
+    vertical-align: top;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #3d3d3d;
+    text-align: left;
+}
+
+.row_azienda.alt2:hover {
+    box-shadow: none;
+}
+
+.titoloSezioneAzienda {
+    width: 50vw;
+    cursor: auto;
+    margin: 20px auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    padding: 0px;
+    text-align: left;
 }
 
 

@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript">
       function caricaAziendeStudente(matricola) {
-        server = "http://localhost/caricaAziendeStudente.php?matricola="+matricola;
+        server = "/caricaAziendeStudente.php?matricola="+matricola;
         richiesta = new XMLHttpRequest();
         richiesta.onreadystatechange = () => {
           var relazioni = document.getElementById("inserisciRelazioni");
@@ -35,7 +35,7 @@
             } else {
               if (relazioni.lastElementChild == null) {
                 messaggio = document.createElement("p");
-                messaggio.innerHTML = "Non ci sono relazioni da inserire.";
+                messaggio.innerHTML = "Nessun tirocinio in corso. Che ne dici di <a href='/nuovoStudente.php' class='link'>iniziarne uno</a>?";
                 relazioni.appendChild(messaggio);
               }
             }
@@ -53,9 +53,9 @@
 	    <div class="gooey-rec"></div>
     </header>
     <h2>Inserisci relazione di tirocino</h2>
-    <form action="aggiornaRelazioni.php" method="get">
+    <form action="aggiornaRelazioni.php" method="get" >
       <label for="matricola">Numero di matricola</label>
-        <input type="text" name="matricola" onblur="caricaAziendeStudente(this.value)">
+        <input type="text" name="matricola" onblur="caricaAziendeStudente(this.value)" placeholder="es. 144019">
       <div id="inserisciRelazioni">
       </div>
     </form>
