@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
   <head>
-    <title>Nuovo studente</title>
+    <title>Inserisci relazione</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript">
@@ -11,7 +11,7 @@
         richiesta.onreadystatechange = () => {
           var relazioni = document.getElementById("inserisciRelazioni");
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
-            if (richiesta.response !== "null") {
+            if (richiesta.response !== "null" || richiesta.response == "") {
               risposta = JSON.parse(richiesta.response);
               for (var i = 0; i < risposta.length; i++) {
                 var id = risposta[i]["id"];
@@ -23,6 +23,7 @@
                   label.setAttribute("for", id);
                   relazioni.appendChild(label);
                   testo.setAttribute("name", "relazioni["+id+"]");
+                  testo.required = true;
                   relazioni.appendChild(testo);
                 }
               }
@@ -49,7 +50,7 @@
   <body>
   <header>
       <a id="logo1" href="/">Portale<br>dei tirocini<br>d'azienda</a>
-      <span id="logo2">Università<br>degli studi<br>di Udine</span>    
+      <span id="logo2">Università<br>degli studi<br>di Udine</span>
 	    <div class="gooey-rec"></div>
     </header>
     <h2>Inserisci relazione di tirocino</h2>

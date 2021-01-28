@@ -313,6 +313,7 @@ textarea {
 
 textarea {
     height: 30vh;
+    resize: none;
 }
 
 input:focus,
