@@ -100,12 +100,12 @@
       <label for="azienda" class="campoRichiesto">Azienda</label>
         <select name="azienda" id="aziende">
         </select>
-      <div>
+      <div id="formInvia">
         <span>I campi con * sono obbligatori</span>
         <button type="submit">Invia</button>
       </div>
     </form>
-    
+
 
   </body>
 </html>

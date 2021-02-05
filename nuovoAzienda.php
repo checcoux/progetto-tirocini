@@ -133,11 +133,10 @@
         <input type="tel" name="telefono" placeholder="es. 123 4567822">
       <label for="web">Sito web</label>
         <input type="text" name="web" placeholder="es. www.agenzia.it">
-      <div>
+      <div id="formInvia">
         <span>I campi con * sono obbligatori</span>
         <button type="submit">Invia</button>
       </div>
-      <!-- INSERIRE BREVE DESCRIZIONE AZIENDA -->
     </form>
   </body>
 </html>

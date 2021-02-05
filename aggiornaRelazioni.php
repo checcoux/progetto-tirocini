@@ -11,23 +11,26 @@
       <span id="logo2">Università<br>degli studi<br>di Udine</span>
 	    <div class="gooey-rec"></div>
     </header>
-    <div class="contenuto-centrato">
-      <h2>Inserimento relazioni completato</h2>
+    <div class="contenutoCentrato">
       <?php
-        $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
-        mysqli_select_db($link, "progetto_tirocinio");
-        $matricola = $_GET["matricola"];
-        $relazioni = $_GET["relazioni"];
-        $aziendeID = array_keys($_GET["relazioni"]);
-        for ($i=0; $i < count($relazioni); $i++) {
-          $aziendaID = $aziendeID["$i"];
-          $relazione = $relazioni["$aziendaID"];
-          $query = mysqli_query($link, "UPDATE tirocini SET relazione='$relazione', stato='1' WHERE matricola='$matricola' AND azienda='$aziendaID'");
+        if (empty($_GET)) {
+          echo '<h2>Ci dispiace</h2>
+                <p>Le relazioni non sono state inserite nel database. Puoi provare a <a href="/nuovoRelazione.php">inserirle nuovamente</a> oppure <a href="/">tornare alla home</a>.</p>';
+        } else {
+          $link = mysqli_connect("db.ccns.it", "tirocinio_user","Tirocinio2020!");
+          mysqli_select_db($link, "progetto_tirocinio");
+          $matricola = $_GET["matricola"];
+          $relazioni = $_GET["relazioni"];
+          $aziendeID = array_keys($_GET["relazioni"]);
+          for ($i=0; $i < count($relazioni); $i++) {
+            $aziendaID = $aziendeID["$i"];
+            $relazione = $relazioni["$aziendaID"];
+            $query = mysqli_query($link, "UPDATE tirocini SET relazione='$relazione', stato='1' WHERE matricola='$matricola' AND azienda='$aziendaID'");
+          }
+          echo "<h2>Inserimento completato</h2><p>Le nuove relazioni sono state inserite correttamente nel database.</p>";
+          mysqli_close($link);
         }
-        echo "<p>Le nuove relazioni sono state inserite correttamente nel database.</p>";
-        mysqli_close($link);
       ?>
     </div>
-    <!-- AGGIUNGERE BOTTONE PER TORNARE ALLA HOME -->
   </body>
 </html>

@@ -11,8 +11,25 @@
         richiesta.onreadystatechange = () => {
           var relazioni = document.getElementById("inserisciRelazioni");
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
-            if (richiesta.response !== "null" || richiesta.response == "") {
-              risposta = JSON.parse(richiesta.response);
+            risposta = richiesta.response;
+            if (risposta == "vuotaMatricola") {
+              relazioni.innerHTML = "";
+              messaggio = document.createElement("p");
+              messaggio.innerHTML = "Nessuna matricola inserita.";
+              relazioni.appendChild(messaggio);
+            } else if (risposta == "noMatricola") {
+              relazioni.innerHTML = "";
+              messaggio = document.createElement("p");
+              messaggio.innerHTML = "La matricola inserita non risulta presente nel database. Prova a reinserirla o <a href=/nuovoStudente.php'>inzia un nuovo tirocinio</a>.";
+              relazioni.appendChild(messaggio);
+            } else if (risposta == "noTirocini") {
+              relazioni.innerHTML = "";
+              messaggio = document.createElement("p");
+              messaggio.innerHTML = "Nessun tirocinio in corso. Che ne dici di <a href=/nuovoStudente.php'>iniziarne uno</a>?";
+              relazioni.appendChild(messaggio);
+            } else if (risposta !== "") {
+              relazioni.innerHTML = "";
+              risposta = JSON.parse(risposta);
               for (var i = 0; i < risposta.length; i++) {
                 var id = risposta[i]["id"];
                 var azienda = risposta[i]["azienda"];
@@ -30,14 +47,9 @@
               if (relazioni.lastElementChild.nodeName !== "BUTTON") {
                 invia = document.createElement("button");
                 invia.setAttribute("type", "submit");
+                invia.style.cssFloat = "right";
                 invia.innerHTML = "invia";
                 relazioni.appendChild(invia);
-              }
-            } else {
-              if (relazioni.lastElementChild == null) {
-                messaggio = document.createElement("p");
-                messaggio.innerHTML = "Nessun tirocinio in corso. Che ne dici di <a href='/nuovoStudente.php' class='link'>iniziarne uno</a>?";
-                relazioni.appendChild(messaggio);
               }
             }
           }
