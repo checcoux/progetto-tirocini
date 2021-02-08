@@ -27,7 +27,7 @@
           $indirizzo = mysqli_real_escape_string($link, $_GET["indirizzo"]);
           $settore = $_GET["settore"];
           $email = $_GET["email"];
-          $query = mysqli_query($link, "INSERT INTO aziende (nome, descrizione, regione, provincia, comune, indirizzo, settore, email) VALUES ('$nome', '$descrizione', '$regione', '$provincia', '$comune', '$indirizzo', '$settore', '$email')");
+          $query = mysqli_query($link, "INSERT INTO aziende (nome, descrizione, regione, provincia, comune, indirizzo, settore, email, tirociniAttivi, tirociniCompletati) VALUES ('$nome', '$descrizione', '$regione', '$provincia', '$comune', '$indirizzo', '$settore', '$email', 0, 0)");
           $aziendaID = mysqli_fetch_assoc(mysqli_query($link, "SELECT id FROM aziende WHERE nome='$nome'"))["id"];
           if (!empty($_GET["telefono"])) {
             $telefono = $_GET["telefono"];
