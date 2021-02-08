@@ -26,12 +26,8 @@
           $dataFine = $_GET["dataFine"];
           $azienda = $_GET["azienda"];
           $settore = $_GET["settore"];
-          $query = mysqli_query($link, "INSERT INTO tirocini (nome, cognome, matricola, dataInizio, dataFine, azienda, settore, stato) VALUES ('$nome', '$cognome', '$matricola', '$dataInizio', '$dataFine', '$azienda', '$settore', 0)");
-          if ($dataFine < date("Y-m-d")) {
-            $query = mysqli_query($link, "UPDATE aziende SET tirociniCompletati=tirociniCompletati+1 WHERE id='$azienda'");
-          } else {
-            $query = mysqli_query($link, "UPDATE aziende SET tirociniAttivi=tirociniAttivi+1 WHERE id='$azienda'");
-          }
+          $query = mysqli_query($link, "INSERT INTO tirocini (nome, cognome, matricola, dataInizio, dataFine, azienda, settore, stato) VALUES ('$nome', '$cognome', '$matricola', '$dataInizio', '$dataFine', '$azienda', '$settore', 0)");      
+          $query = mysqli_query($link, "UPDATE aziende SET tirociniAttivi=tirociniAttivi+1 WHERE id='$azienda'");          
           mysqli_close($link);
           echo '<h2>Inserimento dati completato</h2>
                 <p>I tuoi dati sono stati inseriti correttamente nel database.</p>';
