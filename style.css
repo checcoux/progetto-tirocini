@@ -35,6 +35,7 @@
     font-style: normal;
 }
 
+
 /* STILE GENERALE */
 
 html,
@@ -60,7 +61,8 @@ textarea {
     font-size: 16px;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -80,16 +82,16 @@ h2 {
 }
 
 h3 {
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--testo-sec);
-  text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--testo-sec);
+    text-align: center;
 }
 
 h4 {
-  margin: 10px 0 0 0;
-  color: var(--testo-ter);
-  font-weight: 400;
+    margin: 10px 0 0 0;
+    color: var(--testo-ter);
+    font-weight: 400;
 }
 
 a {
@@ -348,11 +350,14 @@ form select option {
     color: black;
 }
 
+
 /* SCOPRI AZIENDE */
+
 main {
     margin: 0 auto;
     padding: 60px 0;
 }
+
 .scopriAzienda {
     width: 40vw;
     margin: 60px auto;
@@ -438,7 +443,6 @@ main {
     margin: 0 auto;
     cursor: auto;
     text-align: left;
-
 }
 
 .aziendaTirocinio {
@@ -457,7 +461,6 @@ main {
     vertical-align: top;
     font-size: 24px;
     color: var(--grigio-scuro);
-
 }
 
 .aziendaTirocinio h5 {
@@ -465,35 +468,47 @@ main {
     text-align: inherit;
 }
 
-
-.scopriAzienda h5, .aziendaScheda h5, .aziendaTirocinio h5 {
+.scopriAzienda h5,
+.aziendaScheda h5,
+.aziendaTirocinio h5 {
     margin: 10px 0 0 0;
 }
 
-.scopriAzienda div span:nth-of-type(1), .aziendaScheda div span:nth-of-type(1) {
+.scopriAzienda div span:nth-of-type(1),
+.aziendaScheda div span:nth-of-type(1) {
     font-weight: 500;
     color: var(--testo);
 }
 
-.scopriAzienda div span:nth-of-type(2), .scopriAzienda div span:nth-of-type(4),
-.aziendaScheda div span:nth-of-type(2), .aziendaScheda div span:nth-of-type(4) {
+.scopriAzienda div span:nth-of-type(2),
+.scopriAzienda div span:nth-of-type(4),
+.aziendaScheda div span:nth-of-type(2),
+.aziendaScheda div span:nth-of-type(4) {
     margin-left: 10px;
     color: var(--testo-sec);
 }
 
-.scopriAzienda div span:nth-of-type(3), .scopriAzienda div span:nth-of-type(5),
-.aziendaScheda div span:nth-of-type(3), .aziendaScheda div span:nth-of-type(5) {
+.scopriAzienda div span:nth-of-type(3),
+.scopriAzienda div span:nth-of-type(5),
+.aziendaScheda div span:nth-of-type(3),
+.aziendaScheda div span:nth-of-type(5) {
     font-weight: 500;
     color: var(--blu);
 }
 
-.aziendaTirocinio span:nth-of-type(2), .aziendaTirocinio span:nth-of-type(4) {
+.aziendaTirocinio span:nth-of-type(2),
+.aziendaTirocinio span:nth-of-type(4) {
     font-weight: 500;
 }
 
 .aziendaTirocinio span:nth-of-type(3) {
     margin-left: 10px;
 }
+
+.scopri {
+    margin-left: 20px;
+}
+
 
 /* INSERISCI RELAZIONI */
 
@@ -558,29 +573,113 @@ main {
 
 
 /* TEMA CHIARO O SCURO */
+
 @media (prefers-color-scheme: light) {
-  :root {
-    --sfondo: #ffffff;
-    --sfondo-sec: #e6e6e6;
-    --testo: #000000;
-    --testo-sec: #3d3d3d;
-    --testo-ter: #6b6b6b;
-    --blu: #4c3cff;
-    --blu-sec: #959fff;
-    --rosa: #ff6584;
-    --rosa-sec: #ffabbc;
-  }
+     :root {
+        --sfondo: #ffffff;
+        --sfondo-sec: #e6e6e6;
+        --testo: #000000;
+        --testo-sec: #3d3d3d;
+        --testo-ter: #6b6b6b;
+        --blu: #4c3cff;
+        --blu-sec: #959fff;
+        --rosa: #ff6584;
+        --rosa-sec: #ffabbc;
+    }
 }
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    --sfondo: #000000;
-    --sfondo-sec: #131313;
-    --testo: #ffffff;
-    --testo-sec: #e6e6e6;
-    --testo-ter: #c8c8c8;
-    --blu: #4c3cff;
-    --blu-sec: #766aff;
-    --rosa: #ff6584;
-    --rosa-sec: #6e0a1f;
-  }
+     :root {
+        --sfondo: #000000;
+        --sfondo-sec: #131313;
+        --testo: #ffffff;
+        --testo-sec: #e6e6e6;
+        --testo-ter: #c8c8c8;
+        --blu: #4c3cff;
+        --blu-sec: #766aff;
+        --rosa: #ff6584;
+        --rosa-sec: #6e0a1f;
+    }
+}
+
+@media (max-width: 480px) {
+    #logo1 {
+        font-size: 16px;
+    }
+    #logo2 {
+        font-size: 16px;
+        line-height: 0.9em;
+    }
+    .gooey-rec {
+        display: none;
+    }
+    #home h1 {
+        font-size: 15vw;
+    }
+    #home-title {
+        top: 100%;
+    }
+    #home-illustrazione {
+        width: 80vw;
+        left: initial;
+        right: initial;
+    }
+    .scopri {
+        position: absolute;
+        margin-left: 25px;
+    }
+    .contenutoCentratoBottoni {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .contenutoCentrato .bottone:first-of-type {
+        margin-right: 0;
+    }
+    .bottone {
+        text-align: center;
+        margin-bottom: 20px;
+        height: initial;
+    }
+    form {
+        max-width: 60vw;
+    }
+    input,
+    select,
+    textarea {
+        width: 100%;
+    }
+    header+h2 {
+        margin-top: 40px;
+    }
+    .scopriAzienda img,
+    .aziendaScheda img {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+    .scopriAzienda div,
+    .aziendaScheda div {
+        padding-left: 0;
+        margin-top: 125px;
+    }
+    .scopriAzienda,
+    .aziendaScheda {
+        width: 70vw;
+    }
+    .scopriAzienda h2,
+    .scopriAzienda h4,
+    .scopriAzienda h5,
+    .aziendaScheda h2,
+    .aziendaScheda h4,
+    .aziendaScheda h5 {
+        text-align: center;
+    }
+    .scopriAzienda {
+        box-shadow: 5px 8px 24px var(--sfondo-sec);
+    }
+    .aziendaTirociniTitolo,
+    .aziendaTirocinio {
+        width: 70vw;
+    }
 }
