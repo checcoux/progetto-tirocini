@@ -14,10 +14,17 @@
           if ((richiesta.readyState == 4) && (richiesta.status == 200)) {
             document.getElementById("aziende").options.length = 0;
             risposta = JSON.parse(richiesta.response);
-            for (var i = 0; i < risposta.length; i++) {
-              var id = risposta[i]["id"];
-              var nome = risposta[i]["nome"];
-              document.getElementById("aziende").append(new Option(nome, id));
+            if (risposta !== "null") {
+              for (var i = 0; i < risposta.length; i++) {
+                var id = risposta[i]["id"];
+                var nome = risposta[i]["nome"];
+                document.getElementById("aziende").append(new Option(nome, id));
+              }
+              document.querySelector("label[for=azienda]").style.color = "var(--testo)";
+              document.getElementById("aziende").disabled = false;
+            } else {
+              document.querySelector("label[for=azienda]").style.color = "var(--testo-ter)";
+              document.getElementById("aziende").disabled = true;
             }
           }
         };
@@ -99,8 +106,8 @@
           <option value="web">Web</option>
           <option value="veterinaria">Zootecnico</option>
         </select>
-      <label for="azienda" class="campoRichiesto">Azienda</label>
-        <select name="azienda" id="aziende">
+      <label for="azienda" class="campoRichiesto" style="color:var(--testo-ter)">Azienda</label>
+        <select name="azienda" id="aziende" disabled>
         </select>
       <div id="formInvia">
         <span>I campi con * sono obbligatori</span>
