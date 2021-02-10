@@ -350,6 +350,10 @@ form select option {
     color: black;
 }
 
+form select option[disabled] {
+    color: grey;
+}
+
 
 /* SCOPRI AZIENDE */
 
